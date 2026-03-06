@@ -160,7 +160,7 @@ transform/munge/clean/filter the data using **SQL**, and loading it into the tar
 
 ###  Inspection of Glue tables data in CURATED zone using SQL/Athena:
 ###### Customer:
-![cus_curated](hhttps://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/curated/customers_curated.jpg)
+![cus_curated](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/curated/customers_curated.jpg)
 
 ###### Machine learning (step trainer aggregated with accelerometer):
 ![m_l_curated](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/curated/machine_learning_curated.jpg)
