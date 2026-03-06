@@ -11,9 +11,7 @@ For this job we have adopted:
 Python and Spark, Glue, Athena, and S3.
 
 ## Project workflow & stack:
-![flowchart](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/flowchart.png)
-
-![aws_pipeline](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/aws_pipeline.png)
+![flowchart](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/923eaba40fe011a53ae6a2590f4028cf4aa72c6f/images/flowchart.png)
 
 ## Datasets (source):
 - Customer Records: s3://cd0030bucket/customers/
@@ -101,7 +99,7 @@ $ aws iam put-role-policy --role-name my-glue-service-role --policy-name S3Acces
 
 ### Create a Glue database (using Data Catalog or AWS CLI):
 ```
-$ aws glue create-database --database-input '{"Name": "stedi-lake"}'
+$ aws glue create-database --database-input '{"Name": "stedi_db"}'
 ```
 A Glue database allows us to manage the data directly from the S3 bucket. 
 
@@ -112,37 +110,28 @@ A Glue database allows us to manage the data directly from the S3 bucket.
 ---
 
 ### Generation of the following Glue tables using Athena & inspection of raw data in landing zone:
-![tables](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/tables.png)
+![tables](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/tables.jpg)
 
 #### Schema & data types of Glue tables in landing zone:
-![acc_landing_schema](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/acc_landing_schema.png)
+![acc_landing_schema](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/landing/acc_landing_schema.png)
 
-![cus_landing_schema](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/cus_landing_schema.png)
+![cus_landing_schema](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/landing/cus_landing_schema.png)
 
-![step_landing_schema](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/step_landing_schema.png)
+![step_landing_schema](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/landing/step_landing_schema.png)
 
 ---
 
 ### Analysis of Glue tables data in LANDING zone using SQL/Athena:
 ###### Accelerometer:
-![acc_land](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/accelerometer_landing.png)
-
-![acc_land_prev](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/accelerometer_landing_preview.png)
+![acc_land](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/landing/accelerometer_landing.jpg)
 
 ###### Customer:
-![cus_land](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/customer_landing.png)
-
-![cus_land_prev](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/customer_landing_preview.png)
-
-**Filter the data that can be used for research/analytics (customers gave their consensus):**
-![cus_land_priv](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/customer_landing_to_trusted_test.png)
+![cus_land](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/landing/customer_landing.jpg)
 
 ###### Step trainer:
-![step_land](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/step_trainer_landing.png)
+![step_land](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/landing/step_trainer_landing.jpg)
 
-![step_land_prev](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/landing/step_trainer_preview_preview.png)
-
-#### The [sql](https://github.com/abreufreire/stedi-spark-datalake/tree/master/sql/) folder contains the source code (DDL) to create each of the tables.
+#### The [sql](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/tree/master/sql/) folder contains the source code (DDL) to create each of the tables. 
 
 ---
 
@@ -151,9 +140,9 @@ Use Glue Studio to build ETL jobs that extract, transform, and load the data fro
 transform/munge/clean/filter the data using **SQL**, and loading it into the target **S3 bucket**. 
 
 **The following Glue jobs were created:**
-![glue_jobs](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/glue_jobs.png)
+![glue_jobs](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/1fb6aba562d1f26d53c127b32a6053e500dbeb0e/images/glue_jobs.jpg)
 
-##### The [src](https://github.com/abreufreire/stedi-spark-datalake/tree/master/src/) folder contains the source code (python) to create each of the Glue jobs. The name of each file is self-explanatory.
+##### The [src](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/tree/master/src/) folder contains the source code (python) to create each of the Glue jobs. The name of each file is self-explanatory.
 
 ---
 
@@ -164,7 +153,6 @@ transform/munge/clean/filter the data using **SQL**, and loading it into the tar
 ###### Customer:
 ![cus_trusted](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/customer_trusted.png)
 
-![cus_trusted_prev](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/customer_trusted_preview.png)
 
 ###### Step trainer:
 ![step_trusted](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/step_trainer_trusted.png)
