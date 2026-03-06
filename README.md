@@ -148,23 +148,19 @@ transform/munge/clean/filter the data using **SQL**, and loading it into the tar
 
 ###  Investigation of Glue tables data in TRUSTED zone using SQL/Athena:
 ###### Accelerometer:
-![acc_trusted](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/accelerometer_trusted.png)
+![acc_trusted](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/trusted/accelerometer_trusted.jpg)
 
 ###### Customer:
-![cus_trusted](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/customer_trusted.png)
-
+![cus_trusted](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/trusted/customer_trusted.jpg)
 
 ###### Step trainer:
-![step_trusted](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/step_trainer_trusted.png)
-
-**ETL showing accelerometer and step trainer readings in trusted area being transformed (aggregated) into a glue table **machine_learning_curated** in the curated zone.**
-![glue_etl](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/trusted/glue_etl.png)
+![step_trusted](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/trusted/step_trainer_trusted.jpg)
 
 ---
 
 ###  Inspection of Glue tables data in CURATED zone using SQL/Athena:
 ###### Customer:
-![cus_curated](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/curated/customer_curated.png)
+![cus_curated](hhttps://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/curated/customers_curated.jpg)
 
 ###### Machine learning (step trainer aggregated with accelerometer):
-![m_l_curated](https://raw.githubusercontent.com/abreufreire/stedi-spark-datalake/master/graphics/curated/machine_learning_curated.png)
+![m_l_curated](https://github.com/JammalAdeyemi/stedi-lakehouse-aws/blob/6c11153cd6665b58985f591dbb52edee21f6eac1/images/curated/machine_learning_curated.jpg)
