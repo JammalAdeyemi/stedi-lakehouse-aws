@@ -2,9 +2,7 @@ CREATE EXTERNAL TABLE `machine_learning_curated`(
   `sensorreadingtime` bigint COMMENT 'from deserializer', 
   `serialnumber` string COMMENT 'from deserializer', 
   `distancefromobject` int COMMENT 'from deserializer', 
-  `x` double COMMENT 'from deserializer', 
-  `y` double COMMENT 'from deserializer', 
-  `z` double COMMENT 'from deserializer')
+  `timestamp` bigint COMMENT 'from deserializer')
 ROW FORMAT SERDE 
   'org.openx.data.jsonserde.JsonSerDe' 
 STORED AS INPUTFORMAT 
@@ -15,5 +13,5 @@ LOCATION
   's3://jammal/machine_learning/curated/'
 TBLPROPERTIES (
   'CreatedByJob'='step_trainer_trusted_to_curated_job', 
-  'CreatedByJobRun'='jr_b8951af5269b856d89bb3e582986fe76e3a0c57dfcc36faa209f4bd30ec01675', 
+  'CreatedByJobRun'='jr_440a83bf66c9acd8c96bfe2f8f0bacada3adb3f462673c068d0ada678178ad4c', 
   'classification'='json')
